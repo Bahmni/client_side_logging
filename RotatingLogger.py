@@ -19,6 +19,6 @@ class RotatingLogger:
 
     def get_config(self, config_file_path):
         config_file = open(os.path.dirname(__file__) + "/" + config_file_path, 'r')
-        config_dict = yaml.load(config_file)
+        config_dict = yaml.load(config_file,Loader=yaml.SafeLoader)
         config_file.close()
         return config_dict
